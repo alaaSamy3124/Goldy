@@ -38,12 +38,20 @@ class GoldScreen extends StatelessWidget {
                 child: CircularProgressIndicator(color: Colors.white),
               );
             } else if (state is GoldErrorState) {
-              return Text('SOMETHING WRONG');
+              return Center(
+                child: Text(
+                  'Something went wrong',
+                  style: TextStyle(color: Colors.white),
+                ),
+              );
             } else if (state is GoldSuccessState) {
               return Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset(AppImages.gold, width: 200, height: 250),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+
                     children: [
                       CustomText(text: state.goldModel.price.toString()),
                       CustomText(text: " EGP"),
