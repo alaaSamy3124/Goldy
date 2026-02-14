@@ -8,7 +8,7 @@ import 'package:goldy/features/gold/data/models/gold_model.dart';
 class GoldRepo {
   Future<Either<String, GoldModel>> GoldData() async {
     try {
-      final res = await DioHelper.getData(url: ApiConstants.baseUrl);
+      final res = await DioHelper.getData(endPoint: ApiConstants.goldEndpoint);
       return right(GoldModel.fromJson(res.data));
     } catch (e) {
       return left(e.toString());

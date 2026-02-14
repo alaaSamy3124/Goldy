@@ -5,7 +5,7 @@ import 'package:goldy/core/routing/routers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  DioHelper.init();
+  await DioHelper.init();
   runApp(const MyApp());
 }
 
